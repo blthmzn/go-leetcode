@@ -29,3 +29,19 @@ func Equal(l1 *ListNode, l2 *ListNode) bool {
 
 	return Equal(l1.Next, l2.Next)
 }
+
+func Create(slc []int) *ListNode {
+	if len(slc) == 0 {
+		return nil
+	}
+
+	res := &ListNode{}
+	curr := res
+
+	for _, v := range slc {
+		curr.Next = &ListNode{Val: v}
+		curr = curr.Next
+	}
+
+	return res.Next
+}

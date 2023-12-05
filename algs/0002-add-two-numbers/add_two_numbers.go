@@ -1,6 +1,6 @@
 package add_two_numbers
 
-import "github.com/blthmzn/go-leetcode/domain"
+import domain "github.com/blthmzn/go-leetcode/domain/list_domain"
 
 // input: l1 = [2,4,3], l2 = [5,6,4]
 // output: [7,0,8]

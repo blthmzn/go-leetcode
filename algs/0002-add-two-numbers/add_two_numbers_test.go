@@ -3,7 +3,7 @@ package add_two_numbers
 import (
 	"testing"
 
-	"github.com/blthmzn/go-leetcode/domain"
+	domain "github.com/blthmzn/go-leetcode/domain/list_domain"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -15,106 +15,22 @@ func TestAddTwoNumbers(t *testing.T) {
 		expected *domain.ListNode
 	}{
 		{
-			name: "case #1",
-			l1: &domain.ListNode{
-				Val: 2,
-				Next: &domain.ListNode{
-					Val: 4,
-					Next: &domain.ListNode{
-						Val: 3,
-					},
-				},
-			},
-			l2: &domain.ListNode{
-				Val: 5,
-				Next: &domain.ListNode{
-					Val: 6,
-					Next: &domain.ListNode{
-						Val: 4,
-					},
-				},
-			},
-			expected: &domain.ListNode{
-				Val: 7,
-				Next: &domain.ListNode{
-					Val: 0,
-					Next: &domain.ListNode{
-						Val: 8,
-					},
-				},
-			},
+			name:     "case #1",
+			l1:       domain.Create([]int{2, 4, 3}),
+			l2:       domain.Create([]int{5, 6, 4}),
+			expected: domain.Create([]int{7, 0, 8}),
 		},
 		{
-			name: "case #2",
-			l1: &domain.ListNode{
-				Val: 0,
-			},
-			l2: &domain.ListNode{
-				Val: 0,
-			},
-			expected: &domain.ListNode{
-				Val: 0,
-			},
+			name:     "case #2",
+			l1:       domain.Create([]int{0}),
+			l2:       domain.Create([]int{0}),
+			expected: domain.Create([]int{0}),
 		},
 		{
-			name: "case #3",
-			l1: &domain.ListNode{
-				Val: 9,
-				Next: &domain.ListNode{
-					Val: 9,
-					Next: &domain.ListNode{
-						Val: 9,
-						Next: &domain.ListNode{
-							Val: 9,
-							Next: &domain.ListNode{
-								Val: 9,
-								Next: &domain.ListNode{
-									Val: 9,
-									Next: &domain.ListNode{
-										Val: 9,
-									},
-								},
-							},
-						},
-					},
-				},
-			},
-			l2: &domain.ListNode{
-				Val: 9,
-				Next: &domain.ListNode{
-					Val: 9,
-					Next: &domain.ListNode{
-						Val: 9,
-						Next: &domain.ListNode{
-							Val: 9,
-						},
-					},
-				},
-			},
-			expected: &domain.ListNode{
-				Val: 8,
-				Next: &domain.ListNode{
-					Val: 9,
-					Next: &domain.ListNode{
-						Val: 9,
-						Next: &domain.ListNode{
-							Val: 9,
-							Next: &domain.ListNode{
-								Val: 0,
-								Next: &domain.ListNode{
-									Val: 0,
-									Next: &domain.ListNode{
-										Val: 0,
-										Next: &domain.ListNode{
-											Val: 1,
-										},
-									},
-								},
-							},
-						},
-					},
-				},
-			},
+			name:     "case #3",
+			l1:       domain.Create([]int{9, 9, 9, 9, 9, 9, 9}),
+			l2:       domain.Create([]int{9, 9, 9, 9}),
+			expected: domain.Create([]int{8, 9, 9, 9, 0, 0, 0, 1}),
 		},
 	}
 
