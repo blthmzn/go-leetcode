@@ -21,3 +21,15 @@ func singleNumber(nums []int) int {
 
 	return result
 }
+
+// Beautiful an unobvious solution.
+// Any number bitwise XOR with itself is zero
+func foo(nums []int) int {
+	var res int
+
+	for _, n := range nums {
+		res ^= n
+	}
+
+	return res
+}
